@@ -20,4 +20,3 @@ rm -rf hardware/qcom-caf/sm8250/media
 git clone --depth=1 https://github.com/sm6115-dev/hardware_qcom-caf_sm8250_audio.git hardware/qcom-caf/sm8250/audio
 git clone --depth=1 https://github.com/sm6115-dev/hardware_qcom-caf_sm8250_display hardware/qcom-caf/sm8250/display
 git clone --depth=1 https://github.com/sm6115-dev/hardware_qcom-caf_sm8250_media hardware/qcom-caf/sm8250/media
-
