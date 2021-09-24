@@ -21,8 +21,8 @@ task:
       - wget https://eunha.ovin.my.id/0:/Data/xiaomi.eu_multi_HMNote94G_HM9T_21.9.15_v12-11.zip
       - export GIT_TOKEN="$github"
       - ./tools/rom_extract.sh xiaomi.eu_multi_HMNote94G_HM9T_21.9.15_v12-11.zip
-      - ./tools/dump_push.sh dumps/*
+      - ./tools/dump_push.sh xiaomi.eu_multi_HMNote94G_HM9T_21.9.15_v12-11.zip
       - ./tools/dummy_dt.sh
       - cd /tmp/anu
-      - zip -r dt.zip /tmp/anu/dummy_dt
+      - zip -r /tmp/dt.zip /tmp/anu/dummy_dt
       - rclone copy dt.zip inok: -P
