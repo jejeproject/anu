@@ -22,7 +22,7 @@ task:
       - export GIT_TOKEN="$github"
       - ./tools/rom_extract.sh xiaomi.eu_multi_HMNote94G_HM9T_21.9.15_v12-11.zip
       - ./tools/dump_push.sh xiaomi.eu_multi_HMNote94G_HM9T_21.9.15_v12-11.zip
-      - ./tools/dummy_dt.sh
+      - ./tools/dummy_dt.sh dumps/*
       - cd /tmp/anu
       - zip -r /tmp/dt.zip /tmp/anu/dummy_dt
       - rclone copy dt.zip inok: -P
