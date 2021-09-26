@@ -8,7 +8,7 @@ task:
     name: nusantara
     timeout_in: 120m
     container:
-      image: inok2341/anu:latest
+      image: inok2341/anu:dummy
       cpu: 8
       memory: 32G      
 
