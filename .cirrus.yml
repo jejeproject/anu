@@ -2,7 +2,7 @@ env:
     token_telegram: "ENCRYPTED[ef57f747d32c7145cad73cba52ab20330068ae5dcc6510a4c762bbbbac14881a135bda5689f4dbe75a30c39c18a3b8a4]"
     id_telegram: "ENCRYPTED[6f7afb813a6757a3ff95e1a90557ae57b3aed00a6af9860d7616c94c3bf2b390dedc23c8075bcc4adb14b8f1933ce49c]"
     rclone_config: "ENCRYPTED[81f2ea42a1bb72f5514f01604e25bb9057eb0b6f1b0f5a18434dd7175df07619a880e75ecb9597e10e69fba44553fe84]"
-    github: "ENCRYPTED[2965b5f80f1182edf1dd28807108e3a7c3103e75029f9d35fbae911fa02285085874a7c88fd9b36f457cd5b1274dba1c]"
+    github: "ENCRYPTED[316c3c49b50abcfd4b471041cfd2e3312b241de422e0d9627b81827f83bf42672d75e25ac83437dbcabaf7645ce04cfd]"
 
 task:
     name: nusantara
@@ -15,17 +15,22 @@ task:
     dummy_script:
       - mkdir -p ~/.config/rclone
       - echo "$rclone_config" > ~/.config/rclone/rclone.conf
+      - echo "$github" > ~/.git-credentials
       - cd /tmp
       - git clone https://github.com/I-n-o-k/android_tools /tmp/anu
       - cd /tmp/anu
       - apt update
       - bash setup.sh
       - curl -o xiaomi.eu_multi_HMNote94G_HM9T_21.9.15_v12-11.zip https://eunha.ovin.my.id/0:/Data/xiaomi.eu_multi_HMNote94G_HM9T_21.9.15_v12-11.zip
-      - export GIT_TOKEN="$github"
-      - cd /tmp/anu
-      - bash tools/rom_extract.sh xiaomi.eu_multi_HMNote94G_HM9T_21.9.15_v12-11.zip
       - cd /tmp/anu
       - bash tools/dummy_dt.sh dumps/xiaomi.eu_multi_HMNote94G_HM9T_21.9.15_v12-11
+      - cd /tmp/anu/dummy_dt/redmi/lemon
+      - git init
+      - git add .
+      - git commit -m initial
+      - git branch -m 9.15
+      - git add remote origin https://github.com/I-n-o-k/dummy-juice
+      - git push -u origin 9.15
       - cd /tmp/anu
       - zip -r /tmp/dt.zip /tmp/anu/dummy_dt
       - rclone copy /tmp/dt.zip inok: -P
