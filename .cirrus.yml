@@ -12,7 +12,7 @@ task:
       cpu: 8
       memory: 32G      
 
-    dummy_script:
+    dummy_background_script:
       - mkdir -p ~/.config/rclone
       - echo "$rclone_config" > ~/.config/rclone/rclone.conf
       - echo "$github" > ~/.git-credentials
@@ -20,20 +20,5 @@ task:
       - git clone https://github.com/I-n-o-k/android_tools /tmp/anu
       - cd /tmp/anu
       - apt update
-      - bash setup.sh
-      - curl -o xiaomi.eu_multi_HMNote94G_HM9T_21.9.15_v12-11.zip https://eunha.ovin.my.id/0:/Data/xiaomi.eu_multi_HMNote94G_HM9T_21.9.15_v12-11.zip
-      - cd /tmp/anu
-      - bash tools/rom_extract.sh xiaomi.eu_multi_HMNote94G_HM9T_21.9.15_v12-11.zip
-
-    dumpdt_script:
-      - bash /tmp/anu/tools/dummy_dt.sh /tmp/anu/dumps/xiaomi.eu_multi_HMNote94G_HM9T_21.9.15_v12-11/
-      - cd /tmp/anu/dummy_dt/redmi/lemon
-      - git init
-      - git add .
-      - git commit -m initial
-      - git branch -m 9.15
-      - git add remote origin https://github.com/I-n-o-k/dummy-juice
-      - git push -u origin 9.15
-      - cd /tmp/anu
-      - zip -r /tmp/dt.zip /tmp/anu/dummy_dt
-      - rclone copy /tmp/dt.zip inok: -P
+      - apt install tmate
+      - tmate
