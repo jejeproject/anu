@@ -12,7 +12,7 @@ task:
       cpu: 8
       memory: 32G      
 
-    dummy_background_script:
+    dummy_script:
       - mkdir -p ~/.config/rclone
       - echo "$rclone_config" > ~/.config/rclone/rclone.conf
       - echo "$github" > ~/.git-credentials
