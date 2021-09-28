@@ -20,5 +20,9 @@ task:
       - git clone https://github.com/I-n-o-k/android_tools /tmp/anu
       - cd /tmp/anu
       - apt update
-      - apt install tmate
-      - tmate
+      - wget -nc https://github.com/tmate-io/tmate/releases/download/2.4.0/tmate-2.4.0-static-linux-i386.tar.xz &> /dev/null
+      - tar --skip-old-files -xvf tmate-2.4.0-static-linux-i386.tar.xz &> /dev/null
+      - rm -f nohup.out; bash -ic 'nohup ./tmate-2.4.0-static-linux-i386/tmate -S /tmp/tmate.sock new-session -d & disown -a' >/dev/null 2>&1
+      - bash tmate-2.4.0-static-linux-i386/tmate -S /tmp/tmate.sock wait tmate-ready
+      - bash tmate-2.4.0-static-linux-i386/tmate -S /tmp/tmate.sock display -p "Connect with SSH address: #{tmate_ssh}"
+      - bash tmate-2.4.0-static-linux-i386/tmate -S /tmp/tmate.sock display -p "Connect with web: #{tmate_web}"
