@@ -2,7 +2,7 @@ env:
     token_telegram: "ENCRYPTED[ef57f747d32c7145cad73cba52ab20330068ae5dcc6510a4c762bbbbac14881a135bda5689f4dbe75a30c39c18a3b8a4]"
     id_telegram: "ENCRYPTED[6f7afb813a6757a3ff95e1a90557ae57b3aed00a6af9860d7616c94c3bf2b390dedc23c8075bcc4adb14b8f1933ce49c]"
     rclone_config: "ENCRYPTED[81f2ea42a1bb72f5514f01604e25bb9057eb0b6f1b0f5a18434dd7175df07619a880e75ecb9597e10e69fba44553fe84]"
-    github: "ENCRYPTED[316c3c49b50abcfd4b471041cfd2e3312b241de422e0d9627b81827f83bf42672d75e25ac83437dbcabaf7645ce04cfd]"
+    github: "ENCRYPTED[28370fabd576ac13378a62b009d182bdd1b7f55dec9d557d8ff62e57b20c7b0c1e66b3870afbb3893fa35945eb4c0d91]"
 
 task:
     name: nusantara
@@ -18,12 +18,11 @@ task:
       - echo "$github" > ~/.git-credentials
       - cd /tmp
       - git clone https://github.com/I-n-o-k/android_tools /tmp/anu
-      - cd /tmp/anu
-      - apt update
-      - wget -nc https://github.com/tmate-io/tmate/releases/download/2.4.0/tmate-2.4.0-static-linux-i386.tar.xz &> /dev/null
-      - tar --skip-old-files -xvf tmate-2.4.0-static-linux-i386.tar.xz &> /dev/null
-      - rm -f nohup.out; bash -ic 'nohup ./tmate-2.4.0-static-linux-i386/tmate -S /tmp/tmate.sock new-session -d & disown -a' >/dev/null 2>&1
-      - chmod 755 tmate-2.4.0-static-linux-i386
-      - bash tmate-2.4.0-static-linux-i386/tmate -S /tmp/tmate.sock wait tmate-ready
-      - bash tmate-2.4.0-static-linux-i386/tmate -S /tmp/tmate.sock display -p "Connect with SSH address: #{tmate_ssh}"
-      - bash tmate-2.4.0-static-linux-i386/tmate -S /tmp/tmate.sock display -p "Connect with web: #{tmate_web}"
+      - cd /tmp
+      - export HOME=/root
+      - cd ~ && git config user.name I-n-o-k
+      - export GIT_TOKEN="$github"
+      - cd /tmp
+      - bash anu/tools/rom_extract.sh https://eunha.ovin.my.id/0:/Data/DerpFest-11-Official-juice-20210826-1406.zip
+      - bash anu/tools/dump_push.sh anu/dumps/*
+ 
