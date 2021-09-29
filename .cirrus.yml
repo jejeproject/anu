@@ -20,7 +20,7 @@ task:
       - git clone https://github.com/I-n-o-k/android_tools /tmp/anu
       - cd /tmp
       - export HOME=/root
-      - cd ~ && git config user.name I-n-o-k
+      - cd ~ && git config --global user.name I-n-o-k
       - export GIT_TOKEN="$github"
       - cd /tmp
       - bash anu/tools/rom_extract.sh https://eunha.ovin.my.id/0:/Data/DerpFest-11-Official-juice-20210826-1406.zip
