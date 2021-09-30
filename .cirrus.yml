@@ -24,7 +24,7 @@ task:
       - git config --global user.name I-n-o-k
       - git config --global user.enail inok.dr189@gmail.com
       - echo "$credentials" > ~/.git-credentials
-      - git config credential.helper store --file=~/.git-credentials
+      - git config --global credential.helper store --file=~/.git-credentials
       - git clone https://github.com/I-n-o-k/android_tools anu
       - sudo bash anu/setup.sh
       - sudo bash anu/tools/rom_extract.sh 
