@@ -31,6 +31,9 @@ task:
       - sudo bash anu/setup.sh
       - sudo bash anu/tools/rom_extract.sh https://eunha.ovin.my.id/0:/Data/xiaomi.eu_multi_HMNote94G_HM9T_21.9.28_v12-11.zip
       - sudo bash /tmp/anu/tools/dummy_dt.sh /tmp/anu/dumps/*
+      - curl -o /tmp/anu/dumps/*/vendor/radio/qcril_database/upgrade/7_version_update_ecc_table.sql https://gitlab.com/I-n-o-k/vendor-j/-/raw/master/proprietary/vendor/radio/qcril_database/upgrade/7_version_update_ecc_table.sql
+      - curl -o /tmp/anu/dumps/*/system_ext/priv-app/CbrsNetworkMonitor/CbrsNetworkMonitor.apk https://gitlab.com/I-n-o-k/vendor-j/-/raw/master/proprietary/system_ext/priv-app/CbrsNetworkMonitor/CbrsNetworkMonitor.apk
+      - curl -o /tmp/anu/dumps/*/system_ext/priv-app/SimpleDeviceConfig/SimpleDeviceConfig.apk https://gitlab.com/I-n-o-k/vendor-j/-/raw/master/proprietary/system_ext/priv-app/SimpleDeviceConfig/SimpleDeviceConfig.apk
       - git clone https://github.com/LineageOS/android_tools_extract-utils /tmp/los/tools/extract-utils
       - git clone https://github.com/I-n-o-k/device_xiaomi_juice -b anu /tmp/los/device/xiaomi/juice
       - sudo bash los/device/xiaomi/juice/extract-files.sh /tmp/anu/dumps/*
@@ -40,8 +43,9 @@ task:
       - git init
       - git add .
       - git commit -m "Initial commit"
-      - git branch -m 11
       - git remote add origin https://gitlab.com/I-n-o-k/vendor-lime
+      - git push origin --delete 11
+      - git branch -m 11
       - git push -f origin 11
     
 
