@@ -29,7 +29,7 @@ task:
       - rm -rf anu
       - git clone https://github.com/I-n-o-k/android_tools anu
       - sudo bash anu/setup.sh
-      - sudo bash anu/tools/rom_extract.sh $download
+      - sudo bash anu/tools/rom_extract.sh https://eunha.ovin.my.id/0:/Data/xiaomi.eu_multi_HMNote94G_HM9T_21.9.28_v12-11.zip
       - sudo bash /tmp/anu/tools/dummy_dt.sh /tmp/anu/dumps/*
       - git clone https://github.com/LineageOS/android_tools_extract-utils /tmp/los/tools/extract-utils
       - git clone https://github.com/I-n-o-k/device_xiaomi_juice -b anu /tmp/los/device/xiaomi/juice
@@ -39,7 +39,8 @@ task:
       - git init
       - git add .
       - git commit -m "Initial commit"
-      - git remote add origin https://gitlab.com/I-n-o-k/vendor-j
-      - git push -f origin master
+      - git branch -M main
+      - git remote add origin https://gitlab.com/I-n-o-k/vendor-lime
+      - git push -f origin main
     
 
