@@ -34,7 +34,8 @@ task:
       - git clone https://github.com/LineageOS/android_tools_extract-utils /tmp/los/tools/extract-utils
       - git clone https://github.com/I-n-o-k/device_xiaomi_juice -b anu /tmp/los/device/xiaomi/juice
       - sudo bash los/device/xiaomi/juice/extract-files.sh /tmp/anu/dumps/*
-      - mv /tmp/anu/dummy_dt/xiaomi/juice/proprietary-files.txt /tmp/los/vendor/xiaomi/juice
+      - rm -rf /tmp/anu/dummy_dt/working
+      - mv /tmp/anu/dummy_dt/*/*/proprietary-files.txt /tmp/los/vendor/xiaomi/juice
       - cd /tmp/los/vendor/xiaomi/juice
       - git init
       - git add .
