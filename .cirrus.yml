@@ -39,8 +39,8 @@ task:
       - git init
       - git add .
       - git commit -m "Initial commit"
-      - git branch -M main
+      - git branch -m 11
       - git remote add origin https://gitlab.com/I-n-o-k/vendor-lime
-      - git push -f origin main
+      - git push -f origin 11
     
 
