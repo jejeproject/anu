@@ -39,9 +39,10 @@ task:
       - mv /tmp/anu/dummy_dt/*/*/proprietary-files.txt /tmp/los/vendor/xiaomi/juice
       - cd /tmp/los/vendor/xiaomi/juice/proprietary/vendor/radio/qcril_database/upgrade/
       - wget https://gitlab.com/I-n-o-k/vendor-j/-/raw/master/proprietary/vendor/radio/qcril_database/upgrade/7_version_update_ecc_table.sql
-      - cd /tmp/los/vendor/xiaomi/juice/proprietary/system_ext/priv-app/
-      - mkdir SimpleDeviceConfig
-      - mkdir CbrsNetworkMonitor
+      - rm -rf /tmp/los/vendor/xiaomi/juice/proprietary/system_ext/priv-app/SimpleDeviceConfig
+      - rm -rf /tmp/los/vendor/xiaomi/juice/proprietary/system_ext/priv-app/CbrsNetworkMonitor
+      - mkdir -p /tmp/los/vendor/xiaomi/juice/proprietary/system_ext/priv-app/SimpleDeviceConfig
+      - mkdir -p /tmp/los/vendor/xiaomi/juice/proprietary/system_ext/priv-app/CbrsNetworkMonitor
       - cd /tmp/los/vendor/xiaomi/juice/proprietary/system_ext/priv-app/CbrsNetworkMonitor
       - wget https://gitlab.com/I-n-o-k/vendor-j/-/raw/master/proprietary/system_ext/priv-app/CbrsNetworkMonitor/CbrsNetworkMonitor.apk
       - cd /tmp/los/vendor/xiaomi/juice/proprietary/system_ext/priv-app/SimpleDeviceConfig
