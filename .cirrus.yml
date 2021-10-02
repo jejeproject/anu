@@ -42,10 +42,9 @@ task:
       - cd /tmp/los/vendor/xiaomi/juice/proprietary/system_ext/priv-app/
       - mkdir SimpleDeviceConfig
       - mkdir CbrsNetworkMonitor
-      - cd CbrsNetworkMonitor
+      - cd /tmp/los/vendor/xiaomi/juice/proprietary/system_ext/priv-app/CbrsNetworkMonitor
       - wget https://gitlab.com/I-n-o-k/vendor-j/-/raw/master/proprietary/system_ext/priv-app/CbrsNetworkMonitor/CbrsNetworkMonitor.apk
-      - cd ..
-      - cd SimpleDeviceConfig
+      - cd /tmp/los/vendor/xiaomi/juice/proprietary/system_ext/priv-app/SimpleDeviceConfig
       - wget https://gitlab.com/I-n-o-k/vendor-j/-/raw/master/proprietary/system_ext/priv-app/SimpleDeviceConfig/SimpleDeviceConfig.apk
       - cd /tmp/los/vendor/xiaomi/juice
       - git init
