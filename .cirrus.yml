@@ -30,6 +30,6 @@ task:
       - git clone https://github.com/I-n-o-k/android_tools anu
       - sudo bash anu/setup.sh
       - sudo bash anu/tools/rom_extract.sh $download
-      - sudo rclone anu/dumps/*/vendor/build.prop
-      - sudo rclone anu/dumps/*/system/system/build.prop
+      - sudo rclone copy anu/dumps/*/vendor/build.prop inok:vendor -P
+      - sudo rclone copy anu/dumps/*/system/system/build.prop inok:system -P
  
