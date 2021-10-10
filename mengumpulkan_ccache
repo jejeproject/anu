@@ -10,8 +10,8 @@ ccache -o compression=true
 ccache -z
 
 . build/envsetup.sh
-lunch nad_juice-userdebug
-mka nad -j8 &
+lunch nad_onclite-userdebug
+mka nad -j10 &
 sleep 90m
 kill %1
 ccache -s
